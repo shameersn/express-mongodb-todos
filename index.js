@@ -6,10 +6,11 @@ const express = require("express"),
 const todoRouter = require("./routes/todos");
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("views"));
+app.use(express.static("public"));
 app.get("/", (req, res) => {
-  res.send("Api server is running");
+  res.sendFile("index");
 });
 
 app.use("/api/todos", todoRouter);
