@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato");
+/* @import url("https://fonts.googleapis.com/css?family=Lato"); */
 
 * {
   padding: 0;
@@ -56,4 +56,25 @@ li {
   border: 4px solid #3e2723;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+li.completed {
+  text-decoration: line-through;
+}
+
+li span {
+  float: right;
+  cursor: pointer;
+  opacity: 0;
+  font-weight: bold;
+  color: brown;
+  transition: all 0.3s linear;
+  transform-origin: center;
+}
+
+li:hover span {
+  opacity: 1;
+}
+
+li span:hover {
+  transform: scale(1.1);
 }
